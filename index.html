@@ -169,9 +169,8 @@ button{
 <div class="slide">
   <img src="goz-fotografi.jpg" alt="Göz fotoğrafı">
   <div class="card">
-    Gözlerin o kadar güzelki baktıkça içine düşesim geliyor belki sen güzel olmadığını düşünüyosun bilmiyorum ama ben gözlerine bayılıyorum
-    onları 5 dk bile görmek için her yere gelirim kahverengi gözlerine kurban olduğum onları öpemiyorum ayrılırız diye korkuyorum ama
-    çok öpmek istiyorum gözlerini (ayrıldığımızda öpüp kaçıcam)
+    Gözlerin o kadar güzel ki baktıkça içine düşesim geliyor. Belki sen güzel olmadığını düşünüyorsun bilmiyorum ama ben gözlerine bayılıyorum.
+    Onları 5 dk bile görmek için her yere gelirim, kahverengi gözlerine kurban olduğum. Onları öpemiyorum ayrılırız diye korkuyorum ama çok öpmek istiyorum gözlerini (ayrıldığımızda öpüp kaçıcam)
   </div>
 </div>
 
@@ -245,9 +244,9 @@ noBtn.addEventListener("mouseover", () => {
   noBtn.style.top = Math.random()*70 + "%";
 });
 
-/* Sağ-sol tıklama (sadece arka plana) */
+/* Sağ-sol tıklama sadece 3. slide ve sonrası için */
 document.body.addEventListener("click", (e)=>{
-  if(!e.target.closest(".card") && !e.target.closest("button")){
+  if(current >= 2 && !e.target.closest(".card") && !e.target.closest("button")){
     if(e.clientX > window.innerWidth/2) nextSlide();
     else if(current>0) showSlide(current-1);
   }
