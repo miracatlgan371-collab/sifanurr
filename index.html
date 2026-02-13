@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Şifa ❤️</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Arial, sans-serif;
+}
+
+body{
+  background:#ff4d88;
+  overflow:hidden;
+}
+
+/* Slide */
+.slide{
+  position:absolute;
+  width:100%;
+  height:100vh;
+  display:none;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  text-align:center;
+  color:white;
+  padding:40px;
+}
+
+.active{
+  display:flex;
+}
+
+/* Kart */
+.card{
+  background:white;
+  color:#333;
+  padding:35px;
+  border-radius:25px;
+  max-width:900px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* Buton */
+button{
+  border:none;
+  padding:15px 30px;
+  border-radius:30px;
+  font-size:18px;
+  cursor:pointer;
+  background:#ff4d88;
+  color:white;
+  margin:10px;
+}
+
+/* Resimler */
+.slide img{
+  max-width:90%;
+  max-height:75vh;
+  border-radius:20px;
+  object-fit:contain;
+  margin-bottom:20px;
+}
+
+/* Yan yana resimler */
+.row{
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+.row img{
+  width:40%;
+  max-width:400px;
+}
+
+/* Kalpler */
+.heart{
+  position:absolute;
+  font-size:22px;
+  animation:float 6s linear infinite;
+  pointer-events:none; 
+}
+
+@keyframes float{
+  from{ transform:translateY(100vh); opacity:1; }
+  to{ transform:translateY(-10vh); opacity:0; }
+}
+
+/* Patlama */
+.burst{
+  position:absolute;
+  font-size:30px;
+  animation:burst 0.6s ease-out forwards;
+  pointer-events:none;
+}
+
+@keyframes burst{
+  from{ transform:scale(0.5); opacity:1; }
+  to{ transform:scale(2); opacity:0; }
+}
+</style>
+</head>
+
+<body>
+
+<div id="hearts"></div>
+
+<!-- 1 -->
+<div class="slide active">
+  <div class="card">
+    <h1>🔒 Kilit Ekranı</h1><br><br>
+    <p>En sevdiğim şey ne?</p><br>
+    <input id="pass" type="password" placeholder="Cevap..."
+      style="padding:12px;border-radius:10px;border:1px solid #ccc;">
+    <br><br>
+    <button onclick="checkPass()">Aç ❤️</button>
+  </div>
+</div>
+
+<!-- 2 -->
+<div class="slide">
+  <div class="card">
+    <h1>Beni seviyor musun? ❤️</h1><br><br>
+    <button onclick="nextSlide()">Evet 😍</button>
+    <button id="noBtn">Hayır 😢</button>
+  </div>
+</div>
+
+<!-- 3 -->
+<div class="slide">
+  <img src="sifayi-optugum.jpg" alt="Seni öptüğüm an">
+  <div class="card">
+    Seninle geçirdiğimiz neredeyse bir yıl olacak ve ilk defa bir Sevgililer Günü’nde birini gerçekten düşünüyorum.
+    O kişi sensin. Benim için çok özelsin, bu yüzden böyle bir hediye hazırlamak istedim.
+    Seni çok seviyorum birtanem, iyi ki hayatıma girdin, hayatıma renk kattın. 🌸
+  </div>
+</div>
+
+<!-- 4 -->
+<div class="slide">
+  <img src="karli-fotograf.jpg" alt="Kar manzaralı fotoğraf">
+  <div class="card">
+    Yüzünün, daha doğrusu gözlerinin güldüğü fotoğrafları seçtim.
+    Daha tatlı gözüküyorsun bebeğim. Her fotoğrafımız güzel ama bunlar ayrı hoşuma gitti.
+    Daha niceleri gelecek, ayrılmazsa prensesim 🙂
+  </div>
+</div>
+
+<!-- 5 -->
+<div class="slide">
+  <img src="diger-fotograf.jpg" alt="Diğer fotoğraf">
+  <div class="card">
+    Aldığım hediyeleri bununla beraber umarım beğenmişsindir.
+    Seni mutlu etmek istiyorum çünkü mutlu görünce ben de çok güzel hissediyorum.
+    Sen hep mutlu ol, yüzün gülsün güzelim… ben oldukça zaten gülecek. 💞
+    <br><br>
+    <h3>21/03/2025</h3>
+    <h2>Sevgilin sana çok aşık 💗</h2>
+  </div>
+</div>
+
+<!-- 6 -->
+<div class="slide">
+  <img src="goz-fotografi.jpg" alt="Göz fotoğrafı">
+  <div class="card">
+    Gözlerin o kadar güzelki baktıkça içine düşesim geliyor belki sen güzel olmadığını düşünüyosun bilmiyorum ama ben gözlerine bayılıyorum
+    onları 5 dk bile görmek için her yere gelirim kahverengi gözlerine kurban olduğum onları öpemiyorum ayrılırız diye korkuyorum ama
+    çok öpmek istiyorum gözlerini (ayrıldığımızda öpüp kaçıcam)
+  </div>
+</div>
+
+<!-- 7 -->
+<div class="slide">
+  <div class="row">
+    <img src="oturan-fotograf.jpg" alt="Oturan fotoğraf">
+    <img src="yururken-fotograf.jpg" alt="Yürüyen fotoğraf">
+  </div>
+  <div class="card">
+    Seninle vakit geçirmek çok güzel kavgada etsek gülsekte mutluda olsak mutsuzda olsak yanında huzur buluyorum güzelim
+    seninle heryeri gezmek görmek istiyorum seninle yürümeyi çok seviyorum sen tabi küçük ayaklarınla yoruluyosun ama sen
+    yorulana kadar yürümek çok güzel yorulduktan sonra veya acıkmışken çok mızmız oluyosun ama olsun sevgilin seni çok seviyor
+    biraz büyü daha küçüksün ileride kucağımda taşırım yorulduğunda küçük bebeğim benim
+  </div>
+</div>
+
+<!-- 8 SON -->
+<div class="slide">
+  <img src="gul-fotografi.jpg" alt="Gül fotoğrafı">
+  <div class="card" style="margin-top:20px; font-size:24px;">💖 Seni çok seviyorum 💖</div>
+</div>
+
+<script>
+let current = 0;
+const slides = document.querySelectorAll(".slide");
+const hearts = document.getElementById("hearts");
+
+/* Patlama animasyonu */
+function burstHearts(){
+  for(let i=0;i<12;i++){
+    const b = document.createElement("div");
+    b.className = "burst";
+    b.innerHTML = "💗";
+    b.style.left = (window.innerWidth/2 + (Math.random()*200-100))+"px";
+    b.style.top = (window.innerHeight/2 + (Math.random()*200-100))+"px";
+    document.body.appendChild(b);
+    setTimeout(()=>b.remove(),600);
+  }
+}
+
+/* Slide göster */
+function showSlide(index){
+  slides[current].classList.remove("active");
+  current = index;
+  slides[current].classList.add("active");
+  burstHearts();
+}
+
+function nextSlide(){
+  if(current < slides.length-1){
+    showSlide(current+1);
+  }
+}
+
+/* Şifre kontrolü */
+function checkPass(){
+  const val = document.getElementById("pass").value.trim();
+  if(val.toLowerCase() === "şifa"){
+    showSlide(1);
+  } else {
+    alert("Yanlış cevap 😢");
+  }
+}
+
+/* Hayır butonu kaçıyor */
+const noBtn = document.getElementById("noBtn");
+noBtn.addEventListener("mouseover", () => {
+  noBtn.style.position = "absolute";
+  noBtn.style.left = Math.random()*70 + "%";
+  noBtn.style.top = Math.random()*70 + "%";
+});
+
+/* Sağ-sol tıklama (sadece arka plana) */
+document.body.addEventListener("click", (e)=>{
+  if(!e.target.closest(".card") && !e.target.closest("button")){
+    if(e.clientX > window.innerWidth/2) nextSlide();
+    else if(current>0) showSlide(current-1);
+  }
+});
+
+/* Sürekli uçan kalpler */
+setInterval(()=>{
+  const h = document.createElement("div");
+  h.className="heart";
+  h.innerHTML="❤️";
+  h.style.left=Math.random()*100+"%";
+  hearts.appendChild(h);
+  setTimeout(()=>h.remove(),6000);
+},300);
+</script>
+
+</body>
+</html>
