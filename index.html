@@ -108,8 +108,8 @@ button{
 
 <body>
 
-<!-- Arka plan müzik -->
-<audio src="dolu-kadehi-ters-tut-dilerim-ki.mp3" autoplay loop></audio>
+<!-- Arka plan müzik (id eklendi, autoplay kaldırıldı) -->
+<audio id="bgMusic" src="dolu-kadehi-ters-tut-dilerim-ki.mp3" loop></audio>
 
 <div id="hearts"></div>
 
@@ -256,6 +256,12 @@ document.body.addEventListener("click", (e)=>{
   if(current >= 2 && !e.target.closest(".card") && !e.target.closest("button")){
     if(e.clientX > window.innerWidth/2) nextSlide();
     else if(current>0) showSlide(current-1);
+  }
+
+  /* İlk tıklamada müziği başlat */
+  const music = document.getElementById("bgMusic");
+  if(music.paused){
+    music.play();
   }
 });
 
